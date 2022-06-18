@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>All Functions are Methods    </h2>
+    <p id="demo"></p>
+    <hr>
+    <h2>The JavaScript call() Method    </h2>
+    <h3>With the call() method, you can write a method that can be used on different objects.  Methods like call(), apply(), and bind() can refer this to any object.
+    </h3>
+    <p id="demo1"></p>
+    <h2>The call() Method with Arguments    </h2>
+    <hr>
+    <p id="demo2"></p>
+    <h2>Apply methode</h2>
+    <h3>The Difference Between call() and apply()
+        The difference is: <br>
+        
+        The call() method takes arguments separately. <br>
+        
+        The apply() method takes arguments as an array.</h3>
+        <p id="demo3"></p>
+        <hr>
+        <h2>Simulate a Max Method on Arrays
+        </h2>
+        <p id="demo4"></p>
+        <h3>on Arrays</h3>
+        <p id="demo5"></p>
+
+
+
+
+    <script>
+       var myfun={ 
+             F_name :'Raissi',
+             L_name :'anass',
+             fullName: function () {
+                return "your name is "+this.F_name+" "+this.L_name;
+             }
+
+        }
+        document.getElementById('demo').innerHTML=myfun.fullName();
+
+        const person={
+            fullName:function(){
+                return "your name is "+this.First_name+" "+this.Last_name;
+            }
+        }
+        const person1={
+            First_name:'Raissi',
+            Last_name:'anass'
+
+        }
+        const person2={
+            First_name:'Raissi',
+            Last_name:'anass'
+        }
+                    const car = {
+            fullcarName: function() {
+                return this.marque + " " + this.color;
+            }
+            }
+            const car1 = {
+                marque:"Honda",
+                color : "Blue"
+            }
+            const car2 = {
+            color:"Black",
+            marque: "Toyouta"
+            }
+            document.getElementById("demo1").innerHTML = car.fullcarName.call(car1); 
+            //
+             const cars = {
+            fullcarName: function(matricule,reglement) {
+                return this.marque + " " + this.color+','+matricule+','+reglement;
+            }
+            }
+            const carone = {
+                marque:"Honda",
+                color : "Blue"
+            }
+            const cartow = {
+            color:"Black",
+            marque: "Toyouta"
+            }
+            document.getElementById("demo2").innerHTML = cars.fullcarName.call(carone,'matricule','2013'); 
+            //apply method
+            document.getElementById("demo3").innerHTML = cars.fullcarName.apply(carone,['matricule','2013']); 
+            //math.max
+            document.getElementById("demo4").innerHTML = Math.max(4,4,2);  //show the bigger one
+            // if on use an array on use apply
+            document.getElementById("demo5").innerHTML = Math.max.apply(null,[4,4,2]);  //show the bigger one 
+            Math.max.apply(" ", [1,2,3]); // Will also return 3
+            Math.max.apply(0, [1,2,3]); // Will also return 3
+
+
+
+
+            
+                
+        
+
+        
+        
+        
+    </script>
+
+                
+    
+</body>
+</html>
