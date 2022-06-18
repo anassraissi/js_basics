@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+
+    
+    <script>
+        //function functionName(parameter1, parameter2, parameter3) {
+  // code to be executed
+        //}
+
+        /*
+        Function parameters are the names listed in the function definition.
+
+        Function arguments are the real values passed to (and received by) the function
+    */
+   document.getElementById('demo').innerHTML="exp of default parametre ==>"+myfun(4)+" ==> "+myfun.toString();
+   function myfun(a,b){
+    if(b===undefined){  // type b undefined
+        b=2;
+    }
+      return a*b;
+   }
+   document.getElementById('demo1').innerHTML="default parameter values in the function declaration ="+myfun1(3)+" ==> as script "+myfun1.toString();
+   function myfun1(c,d=2){
+    return c*d;
+   }
+   document.getElementById('demo2').innerHTML=myfun2(4,3,2,6,8,-1);
+
+   function myfun2(){
+        let max=-Infinity;
+        for(let i=0;i<arguments.length;i++){
+            if(max<arguments[i]){
+                max=arguments[i];
+            }
+        }
+        return max;
+   }
+   console.log(Math.pow(10, 1000)); // Infinity
+
+    </script>
+</body>
+</html>
