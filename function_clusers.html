@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JavaScript Closures
+    </h2>
+    <h3>with self-invoking</h3>
+    <button onclick="my_function()">Count</button>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+        <script>
+           function  my_function(){
+            document.getElementById('demo').innerHTML=add();
+           }
+           const add=(function(){
+            let Counter=0;
+            return function(){return Counter+=1;}
+           })();
+           (function(){
+                document.getElementById('demo1').innerHTML='this exp of self invoking function';
+
+           })();
+
+        </script>
+    
+</body>
+</html>
