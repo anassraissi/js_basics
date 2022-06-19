@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JavaScript Function bind() <br>Function Borrowing
+        method bind is offer to use an object function to another object
+
+    </h2>
+    <p id="demo"></p>
+    <hr>
+    <h2>forget this in object a few momenet leter </h2>
+    <p id="dem2"></p>
+    <script>
+        const person={
+            
+            f_name:'Raissi',
+            l_name:'ANASS',
+            full_name:function(){
+                return this.f_name+', and '+this.l_name;
+            }
+        }
+        const person1={
+            
+            f_name:'Imam',
+            l_name:'Raissi',
+        }
+        let full_names=person.full_name.bind(person1);
+        document.getElementById('demo').innerHTML=full_names(); // obligatoire use full_name()
+
+        //call forget it a few moment leter.
+        const func_forget={
+            forget:function(){
+                document.getElementById('dem2').innerHTML='that will be deleted';
+            }
+        };
+      
+        // const car={
+        //     color:'Red',
+        //     Name:'Honda',
+        //     full_props:function(){
+        //             let x=document.getElementById('dem2');
+        //             x.innerHTML=this.Name+','+this.color;
+        //     }
+        // }
+        // // car.full_props();
+        // setTimeout(() => {
+        //     car.full_props.bind(car); 
+        // }, 3000);
+        const car = {
+                        color:"Red",
+                        Name: "Honda",
+            display: function() {
+                let x = document.getElementById("dem2");
+                x.innerHTML = this.Name + " " + this.color;
+            }
+            }
+
+            let display = car.display.bind(car); // // the this in object deleted without using bind; 
+            setTimeout(display, 3000);
+        
+
+
+
+
+    </script>
+</body>
+</html>
