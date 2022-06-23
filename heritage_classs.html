@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>using simple hiritage</h2>
+    <p id="demo"></p>
+    <h2>using get methode </h2>
+    <p id="demo1"></p>
+    <h2>using set methode</h2>
+    <p id="demo02"></p>
+    <hr>
+    <h2>JavaScript class not use logic hoisting that means that you have to declare class befor use it</h2>
+    <script>
+        class Car {
+  constructor(brand) {
+    this._carname = brand;
+  }
+  present() {
+    return 'I have a ' + this._carname;
+  }
+  get carname(){  //underscore for not look object like methode
+    return ' im a '+this._carname;
+  }
+  set carname(x){
+        this._carname=x;
+  }
+}
+
+class Model extends Car {
+  constructor(brand, mod) {
+    super(brand);
+    this.model = mod;
+  }
+  show() {
+    return this.present() + ', it is a ' + this.model;
+  }
+}
+
+let myCar = new Model("Ford", "Mustang");
+document.getElementById("demo").innerHTML = myCar.show();
+ let one_car=new Car('Honda');
+ document.getElementById('demo1').innerHTML=one_car.carname;  //use get methode 
+//using set metode
+    let tow_car=new Car('Honda');
+    tow_car.carname='Mazda';
+    document.getElementById('demo02').innerHTML=tow_car.carname;
+    </script>
+    
+</body>
+</html>
