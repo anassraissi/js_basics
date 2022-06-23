@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>simple static methode</h2>
+    <p id="demo"></p>
+    <h2>use static method as public methode</h2>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+
+    <script>
+        class student{
+            constructor(name){
+                this.name=name;
+            }
+            static aficher(){
+                return 'Hello student';
+            }
+            static lister(x){
+                return 'Hello '+x+' are you student';
+            }
+            static show(x){
+                return 'Hello '+x.name+' are you student';
+            }
+        }
+        let talib=new student('Raissi Anass');
+        document.getElementById('demo').innerHTML=student.aficher(); //call it just in student class because it declarite as static
+        //if we call it we send it as parametre in static methode
+        document.getElementById('demo1').innerHTML=student.lister('Ali');
+        debugger;
+        document.getElementById('demo2').innerHTML=student.show(talib);
+
+
+    </script>
+</body>
+</html>
