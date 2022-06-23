@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Classes
+    </h1>
+    <h3>class ClassName {
+        constructor() { ... }
+      }</h3>
+      <h3>
+        class Car {
+            constructor(name, year) {
+              this.name = name;
+              this.year = year;
+            }
+          }
+      </h3>
+      <p id="demo"></p>
+      <hr>
+      <h2>class ClassName { <br> 
+        constructor() { ... } <br>
+        method_1()  ... <br>
+        method_2()  ... <br>
+        method_3()  ... <br>
+      }</h2>
+      <h3>exp of methode in class</h3>
+      <p id="dem2"></p>
+      <h4>You can send parameters to Class methods:
+    </h4>
+    
+
+      <script>
+                class car{
+                    constructor (name,color){
+                        this.name=name;
+                        this.color=color;
+                    }
+                }
+                const my_car=new car('Honda','Blue'); //decl of object
+                document.getElementById('demo').innerHTML=my_car.name+','+my_car.color;
+
+                class dog{
+                    constructor(name,year){
+                        this.name=name;
+                        this.year=year;
+                    }
+                    age(){
+                        let dat=new Date();
+                        return dat.getFullYear()-this.year;
+                      
+
+                    }
+                }
+                const my_dog=new dog('Lieka',2019);
+                document.getElementById('dem2').innerHTML='my dog name is '+my_dog.name+' have '+my_dog.age()+' years old';
+
+
+      </script>
+    
+</body>
+</html>
