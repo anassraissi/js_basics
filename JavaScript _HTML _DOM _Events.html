@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="hello()">
+    <h2 id="onload_output"></h2>
+    turn this output to uppercase <input type="text" id="text" onchange="uppercase()">
+       
+    <h1 onclick="this.innerHTML='Raissi'">Hi Anass click me to know my last name</h1>
+    <h2>events</h2>
+    <h2 id="onmouseover" onmouseover="this.innerHTML='well donne anass you do it'" >im using onmouseover</h2>
+    <h2  onmousedown="this.innerHTML='please release me'" onmouseup="this.innerHTML='thank you anass'" >im using onmouseup onmousedown</h2>
+        <H3>Event listner: yamkan tdir bzaf events bla matecrase event lhalia</H3>
+        <button id="btn">i'm using eevent listner click me to show datetime</button>
+        <p id="demo"></p> <br>
+        <button id="btn_2">im using event listner by send tow events on the same button</button>
+
+    <!-- <h2 id="onmouseover" onmouseover="mOver(this)" >im using onmouseover</h2> -->
+    <script>
+            function hello(){
+                document.getElementById('onload_output').innerHTML='hello raissi you the nice one here';
+            }
+            function uppercase(){
+                x=document.getElementById('text');
+                x.value=x.value.toUpperCase();
+            }
+            function mOver(Obj){
+                Obj.innerHTML='well donne anass you do it';
+            }
+            document.getElementById('btn').addEventListener("click",displaydate);
+             function displaydate(){    
+                document.getElementById('demo').innerHTML=Date();
+             }
+            document.getElementById('btn_2').addEventListener('click',display);
+            document.getElementById('btn_2').addEventListener('click',show);
+             function display(){
+                    alert('hi im the one event');
+             }
+             function show(){
+                    alert('hi im the two event');
+             }
+
+
+            
+    </script>
+</body>
+</html>
