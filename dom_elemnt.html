@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Finding by id</h2>
+    <p id="id">Raissi Raissi</p>
+    <h2>using by id</h2>
+     <p id="par"></p>
+     <p id="par2"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, quae id. Harum quia rem ullam magni ad perferendis consectetur, reiciendis nisi autem id, rerum suscipit provident sunt at dolorem vero?</p>
+    <h2>using tag name</h2>
+     <p id="doc"></p>
+     <p id="doc1"></p>
+     <h2> using fetch specifec id in all p or tag name p</h2>
+     <div id="name">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium nulla veniam tenetur possimus consequuntur sed dolor tempore voluptatum expedita perferendis maxime aut omnis odit deleniti natus, neque eveniet dolorem cupiditate.</p>
+     </div>
+     <h3>Finding HTML Elements by Tag Name    </h3>
+     <p class="intro">Anass is using class intro</p>
+     <p class="intro">Raissi is using class intro</p>
+      <p id="intro_write"></p>
+     <hr>
+     <h3>Finding HTML Elements by CSS Selectors    </h3>
+     <p class="demo">paragraph with class call demo</p>
+        <p id="demo"> paragraph with id call demo</p>
+         <p id="demo1"></p>
+         <h3>Finding HTML Elements by HTML Object Collections </h3>
+         <form id="form" action="">
+          First name: <input type="text" name="fname" value="Donald"><br>
+          Last name: <input type="text" name="lname" value="Duck"><br><br>
+          <input type="submit" value="Submit">
+        </form>
+         <p id="form_write"></p>
+    
+    <script>
+        let par=document.getElementById('id');
+        document.getElementById('par').innerHTML='my name is '+par.innerHTML+' im a future developper '; //inner html is obligatoire
+        //
+        let par2=document.getElementsByTagName('p');
+        document.getElementById('doc').innerHTML=par2[2].innerHTML;
+       //
+        let par3=document.getElementById('name');
+        const x=par3.getElementsByTagName('p');
+        document.getElementById('doc1').innerHTML=x[0].innerHTML;
+       //
+        const y=document.getElementsByClassName('intro');
+        document.getElementById('intro_write').innerHTML=' '+y[1].innerHTML; //return Raissi is using class intro
+       //
+        const Selectors=document.querySelectorAll("p.demo"); //mean all demo in p 
+        document.getElementById('demo1').innerHTML=Selectors[0].innerHTML;  //using jsut in class case not id or ethier
+        //
+        const Collection=document.forms['form1']; //id form
+        let text="";
+        for (let i = 0; i < Collection.length ;i++) {
+          text = Collection.elements[i].value;  // elements => inputs
+          document.getElementById('form').innerHTML=text;
+        }
+        // document.getElementById('form_write').innerHTML='anass';
+        document.getElementById('form').innerHTML=text;
+        
+   </script>
+
+</body>
+</html>
